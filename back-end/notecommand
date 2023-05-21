@@ -1,0 +1,20 @@
+192.168.1.197
+nmap -sS --max-retries 3 --host-timeout 10s 192.168.1.197
+nmap -p 80-1000 192.168.1.197
+
+
+
+exec("ls -la", (error, stdout, stderr) => {
+    if (error) {
+      console.log(`error: ${error.message}`);
+      return;
+    }
+    if (stderr) {
+      console.log(`stderr: ${stderr}`);
+      return;
+    }
+
+    res.send(stdout);
+    //ici mettre en db
+    console.log(`stdout: ${stdout}`);
+  });
